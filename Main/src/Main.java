@@ -23,12 +23,12 @@ public class Main {
             discount = 100;
         } else if (age < 18) {
             discount += 50;
-            if (city.equals("Warsaw")) {
-                discount += 10;
-            }
-            if (dayOfTheWeek.equals("THURSDAY")) {
-                discount = 100;
-            }
+        }
+        if (city.equals("Warsaw")) {
+            discount += 10;
+        }
+        if (dayOfTheWeek.equals("THURSDAY")) {
+            discount = 100;
         }
 
         price -= (price * discount * 0.01);
