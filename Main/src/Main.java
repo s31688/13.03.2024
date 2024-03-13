@@ -14,7 +14,8 @@ public class Main {
         String city = sc2.nextLine();
 
         System.out.println("Checking current date...");
-        String date = LocalDate.now().getDayOfWeek().name();
+        LocalDate date = LocalDate.now();
+        String dayOfTheWeek = date.getDayOfWeek().name();
 
         int discount = 0;
 
@@ -25,14 +26,14 @@ public class Main {
             if (city.equals("Warsaw")) {
                 discount += 10;
             }
-            if (date.equals("THURSDAY")) {
+            if (dayOfTheWeek.equals("THURSDAY")) {
                 discount = 100;
             }
         }
 
         price -= (price * discount * 0.01);
 
-        System.out.println(date + ": " + city + ", " + age + " years old, weekday Ticket price: " + price + " PLN " +
-                "Discount: " + discount + "%");
+        System.out.println(date + ": " + city + ", " + age + " years old, " + dayOfTheWeek + " Ticket price: " + price +
+                " PLN " + "Discount: " + discount + "%");
     }
 }
